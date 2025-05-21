@@ -1,0 +1,58 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = 'gtfs_segments'
+description = "someting for final"
+
+requires-python = ">=3.9"
+version = "2.1.7"
+dependencies = [
+    "geopandas >= 0.12.0",
+    "scipy",
+    "shapely",
+    "numpy >= 1.25.0",
+    "pandas >= 2.0.0",
+    "matplotlib",
+    "utm",
+    "contextily",
+    "requests",
+    "isoweek",
+    "faust-cchardet",
+    "charset_normalizer",
+    "folium",
+    "thefuzz",
+]
+authors = [
+    {name = "Chyngyz Baibosunov"},
+    {name = "Ramazan Ulanbekov"},
+    {name = "Baiel Askarbekov"}
+]
+
+[tool.setuptools]
+packages = ["gtfs_segments","gtfs_segments.partridge_mod"]
+
+[tool.ruff]
+src = ["gtfs_segments"]
+line-length = 100
+indent-width = 4
+
+target-version = "py39"
+
+[tool.ruff.lint]
+exclude = ["*.ipynb"]
+select = ["E", "F", "W", "Q", "I"]
+ignore = ["E203","E501"]
+extend-select = []
+fixable = ["ALL"]
+unfixable = []
+
+[tool.ruff.format]
+exclude = ["*.ipynb"]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+docstring-code-format = true
+docstring-code-line-length = "dynamic"
